@@ -9,6 +9,11 @@ import rootReducer from "./redux/configStore";
 
 const store = configureStore({
   reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: true,
+      serializableCheck: false,
+    }),
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

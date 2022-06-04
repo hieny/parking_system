@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import UserMenu from "../../components/Menu/UserMenu/UserMenu";
+import { getParkingListAPI } from "../../redux/actions/ParkingLotAction";
 import "../../style/styles.css";
 import ZoneA from "./ParkingZone/ZoneA";
 import ZoneBottom from "./ParkingZone/ZoneBottom";
 
 export default function UserDashboard() {
+  const getParkingList = () => {
+    dispatch(getParkingListAPI());
+  };
+
+  useEffect(() => {
+    getParkingList();
+    // console.log("lot detail", lot);
+    return () => {};
+  }, []);
+
+  const dispatch = useDispatch();
   return (
     <div className="content">
       <div className="content-body">

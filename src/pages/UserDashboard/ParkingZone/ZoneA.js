@@ -1,9 +1,37 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import Header from "../../../template/Normal/Layouts/Header/Header";
+import { useSelector } from "react-redux";
 
 export default function ZoneA() {
-  const dispatch = useDispatch();
+  const { lot } = useSelector((state) => state.ParkingLotReducer);
+
+  // className="lot-A-detail actived mr-3"
+  const renderLots = () => {
+    // eslint-disable-next-line array-callback-return
+    return lot.map((item, index) => {
+      if (item.parkingSlot_ID <= 31) {
+        console.log("status", item.parkingSlot_status);
+        let actived = item.parkingSlot_status === "1" ? "actived" : "";
+        return (
+          <button
+            key={index}
+            type="button"
+            className={`lot-A-detail ${actived}  mr-3`}
+            data-toggle="modal"
+            data-target="#modelId"
+            // onClick={() => {
+            //   dispatch({
+            //     type: "Open_Login",
+            //     Component: <p>Hello there</p>,
+            //   });
+            // }}
+          >
+            {item.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
   return (
     <div className="zone-A">
       <div className="container-fluid">
@@ -12,7 +40,8 @@ export default function ZoneA() {
           <div className="zone-A-content col-md-12">
             <div className="zone-A-lists">
               <div className="zone-A-lot d-flex flex-row">
-                <button
+                {renderLots()}
+                {/* <button
                   type="button"
                   className="lot-A-detail actived mr-3"
                   data-toggle="modal"
@@ -57,7 +86,7 @@ export default function ZoneA() {
                 <button className="lot-A-detail mr-3">A28</button>
                 <button className="lot-A-detail mr-3">A29</button>
                 <button className="lot-A-detail mr-3">A30</button>
-                <button className="lot-A-detail mr-3">A31</button>
+                <button className="lot-A-detail mr-3">A31</button> */}
               </div>
             </div>
           </div>

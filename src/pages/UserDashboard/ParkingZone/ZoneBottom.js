@@ -1,6 +1,164 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function ZoneBottom() {
+  const { lot } = useSelector((state) => state.ParkingLotReducer);
+
+  const getLotBLeftLeft = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 32 && lot.parkingSlot_ID <= 45) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-3 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotBLeftRight = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 46 && lot.parkingSlot_ID <= 59) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-5 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotBLeftRightLeft = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 60 && lot.parkingSlot_ID <= 73) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-3 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotBLeftRightRight = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 74 && lot.parkingSlot_ID <= 87) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-5 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotBRightLeft = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 88 && lot.parkingSlot_ID <= 101) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-4 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotBRightRight = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 102 && lot.parkingSlot_ID <= 115) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-5 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotCLeftLeft = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 116 && lot.parkingSlot_ID <= 129) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-4 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotCLeftRight = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 130 && lot.parkingSlot_ID <= 143) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-5 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotCRightLeftLeft = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 144 && lot.parkingSlot_ID <= 157) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-3 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotCRightLeftRight = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 158 && lot.parkingSlot_ID <= 171) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-5 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotCRightRightLeft = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 172 && lot.parkingSlot_ID <= 185) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-3 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
+
+  const getLotCRightRightRight = () => {
+    return lot.map((lot, index) => {
+      let actived = lot.parkingSlot_status === "1" ? "actived" : "";
+      if (lot.parkingSlot_ID >= 186 && lot.parkingSlot_ID <= 199) {
+        return (
+          <button key={index} className={`lot-B-detail ${actived} mr-5 mt-3`}>
+            {lot.parkingSlot_number}
+          </button>
+        );
+      }
+    });
+  };
   return (
     <div className="zone-bottom">
       <div className="container-fluid">
@@ -15,169 +173,19 @@ export default function ZoneBottom() {
                     <div className="d-flex flex-row">
                       <div className="d-flex flex-row left-left-detail mr-3">
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            B1
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">B2</button>
-                          <button className="lot-B-detail mr-3 mt-3">B3</button>
-                          <button className="lot-B-detail mr-3 mt-3">B4</button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            B5
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">B6</button>
-                          <button className="lot-B-detail mr-3 mt-3">B7</button>
-                          <button className="lot-B-detail mr-3 mt-3">B8</button>
-                          <button className="lot-B-detail mr-3 mt-3">B9</button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            B10
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B11
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B12
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B13
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            B14
-                          </button>
+                          {getLotBLeftLeft()}
                         </div>
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B15
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B16
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B17
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B18
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            B19
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B20
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B21
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B22
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B23
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B24
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B25
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B26
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B27
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            B28
-                          </button>
+                          {getLotBLeftRight()}
                         </div>
                       </div>
                       <div className="line-B-left" />
                       <div className="d-flex flex-row left-right-detail">
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B29
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B30
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            B31
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B32
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B33
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B34
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B35
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B36
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B37
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            B38
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B39
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B40
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B41
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            B42
-                          </button>
+                          {getLotBLeftRightLeft()}
                         </div>
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B43
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B44
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B45
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B46
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B47
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B48
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B49
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B50
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            B51
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B52
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            B53
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B54
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B55
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B56
-                          </button>
+                          {getLotBLeftRightRight()}
                         </div>
                       </div>
                     </div>
@@ -188,93 +196,11 @@ export default function ZoneBottom() {
                     <div className="d-flex flex-row">
                       <div className="d-flex flex-row left-left-detail mr-4">
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            B57
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B58
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B59
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B60
-                          </button>
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            B61
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B62
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B63
-                          </button>
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            B64
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B65
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B66
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B67
-                          </button>
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            B61
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B62
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            B63
-                          </button>
+                          {getLotBRightLeft()}
                         </div>
                         <div className="line-B-right" />
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B64
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B65
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B66
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B67
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B68
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B69
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B70
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B71
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B72
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B73
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B74
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B75
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B76
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            B77
-                          </button>
+                          {getLotBRightRight()}
                         </div>
                       </div>
                     </div>
@@ -293,79 +219,11 @@ export default function ZoneBottom() {
                     <div className="d-flex flex-row">
                       <div className="d-flex flex-row left-left-detail mr-4">
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            C1
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">C2</button>
-                          <button className="lot-B-detail mr-4 mt-3">C3</button>
-                          <button className="lot-B-detail mr-4 mt-3">C4</button>
-                          <button className="lot-B-detail mr-4 mt-3">C5</button>
-                          <button className="lot-B-detail mr-4 mt-3">C6</button>
-                          <button className="lot-B-detail mr-4 mt-3">C7</button>
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            C8
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">C9</button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            C10
-                          </button>
-                          <button className="lot-B-detail actived mr-4 mt-3">
-                            C11
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            C12
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            C13
-                          </button>
-                          <button className="lot-B-detail mr-4 mt-3">
-                            C14
-                          </button>
+                          {getLotCLeftLeft()}
                         </div>
                         <div className="line-C-left" />
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C15
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C16
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C17
-                          </button>
-                          <button className="lot-B-detail actived actived mr-5 mt-3">
-                            C18
-                          </button>
-                          <button className="lot-B-detail actived actived mr-5 mt-3">
-                            C19
-                          </button>
-                          <button className="lot-B-detail actived actived mr-5 mt-3">
-                            C20
-                          </button>
-                          <button className="lot-B-detail actived actived mr-5 mt-3">
-                            C21
-                          </button>
-                          <button className="lot-B-detail actived actived mr-5 mt-3">
-                            C22
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C23
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C24
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C25
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C26
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C27
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C28
-                          </button>
+                          {getLotCLeftRight()}
                         </div>
                       </div>
                     </div>
@@ -376,183 +234,19 @@ export default function ZoneBottom() {
                     <div className="d-flex flex-row">
                       <div className="d-flex flex-row left-left-detail mr-3">
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C29
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C30
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C31
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C32
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C33
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C34
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C35
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C36
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C37
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C38
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C39
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C40
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C41
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C42
-                          </button>
+                          {getLotCRightLeftLeft()}
                         </div>
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C43
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C44
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C45
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C46
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C47
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C48
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C49
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C50
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C51
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C52
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C53
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C54
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C55
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C56
-                          </button>
+                          {getLotCRightLeftRight()}
                         </div>
                       </div>
                       <div className="line-C-right" />
                       <div className="d-flex flex-row left-right-detail">
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C57
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C58
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C59
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C60
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C61
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C62
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C63
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C64
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C65
-                          </button>
-                          <button className="lot-B-detail mr-3 mt-3">
-                            C66
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C67
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C68
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C69
-                          </button>
-                          <button className="lot-B-detail actived mr-3 mt-3">
-                            C70
-                          </button>
+                          {getLotCRightRightLeft()}
                         </div>
                         <div className="d-flex flex-column">
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C71
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C72
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C73
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C74
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C75
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C76
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C77
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C78
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C79
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C80
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C81
-                          </button>
-                          <button className="lot-B-detail mr-5 mt-3">
-                            C82
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C83
-                          </button>
-                          <button className="lot-B-detail actived mr-5 mt-3">
-                            C84
-                          </button>
+                          {getLotCRightRightRight()}
                         </div>
                       </div>
                     </div>
