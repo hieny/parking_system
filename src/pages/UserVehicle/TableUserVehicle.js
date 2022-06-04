@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import Pagin from "../../components/Paginnation/Pagin";
 
 export default function TableUserVehicle() {
+  // const [paginantion, setPaginnation] = useState({
+  //   page: 1,
+  //   limit: 10,
+  //   totalRows: 11,
+  // });
+  // const handlePageChange = (newPage) => {
+  //   console.log("New Page: ", newPage);
+  // };
   return (
     <div
       className="bg-white"
@@ -320,6 +329,7 @@ export default function TableUserVehicle() {
           </tr>
         </tbody>
       </table>
+      {/* <Pagin paginantion={paginantion} onPageChange={handlePageChange} /> */}
     </div>
   );
 }

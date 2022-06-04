@@ -1,5 +1,5 @@
 import { Route } from "react-router-dom";
-import Header from "../../DashBoard/Header/Header";
+import Header from "../Layouts/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 
 export const NormalTemplate = (props) => {

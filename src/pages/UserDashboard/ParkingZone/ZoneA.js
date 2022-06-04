@@ -1,6 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import Header from "../../../template/Normal/Layouts/Header/Header";
 
 export default function ZoneA() {
+  const dispatch = useDispatch();
   return (
     <div className="zone-A">
       <div className="container-fluid">
@@ -9,7 +12,20 @@ export default function ZoneA() {
           <div className="zone-A-content col-md-12">
             <div className="zone-A-lists">
               <div className="zone-A-lot d-flex flex-row">
-                <button className="lot-A-detail actived mr-3">A0</button>
+                <button
+                  type="button"
+                  className="lot-A-detail actived mr-3"
+                  data-toggle="modal"
+                  data-target="#modelId"
+                  onClick={() => {
+                    dispatch({
+                      type: "Open_Login",
+                      Component: <p>Hello there</p>,
+                    });
+                  }}
+                >
+                  A0
+                </button>
                 <button className="lot-A-detail mr-3">A1</button>
                 <button className="lot-A-detail mr-3">A2</button>
                 <button className="lot-A-detail mr-3">A3</button>
